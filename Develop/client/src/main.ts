@@ -52,7 +52,7 @@ const fetchWeather = async (cityName: string) => {
 };
 
 const fetchSearchHistory = async () => {
-  const history = await fetch('/api/weather/history', {
+  const history = await fetch("http://localhost:5000/api/weather/history", {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
