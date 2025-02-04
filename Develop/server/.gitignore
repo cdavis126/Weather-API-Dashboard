@@ -1,3 +1,6 @@
+#protected files
+.env
+
 # Logs
 logs
 *.log
