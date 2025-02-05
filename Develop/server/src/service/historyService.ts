@@ -1,6 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { v4 as uuidv4 } from "uuid";
+import { fileURLToPath } from "url"; // ✅ Import required for ES module path handling
+
+// ✅ Fix for `__dirname` in ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // TODO: Define a City class with name and id properties
 class City {
   id: string;
@@ -14,9 +20,11 @@ class City {
 // TODO: Complete the HistoryService class
 class HistoryService {
   private historyFile: string;
+
   constructor() {
     this.historyFile = path.join(__dirname, "../../db/db.json"); // search your jscon file
   }// TODO: Define a read method that reads from the searchHistory.json file--idk if this works need to go back and check
+  
   private async read(): Promise<City[]> {
     try {
       if (!fs.existsSync(this.historyFile)) return [];
