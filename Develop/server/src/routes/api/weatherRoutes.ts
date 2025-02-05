@@ -1,19 +1,42 @@
-import { Router, type Request, type Response } from 'express';
+import { Router, type Request, type Response } from "express";
+import dotenv from "dotenv";
+import { fetchWeather } from "../../service/weatherService";
+import { readHistory, saveCity, deleteCity } from "../../service/historyService";
+
+dotenv.config();
 const router = Router();
 
-// import HistoryService from '../../service/historyService.js';
-// import WeatherService from '../../service/weatherService.js';
+router.post("/", async (req: Request, res: Response) => {
+  const { city } = req.body;
+  if (!city) return res.status(400).json({ error: "City name required" });
 
-// TODO: POST Request with city name to retrieve weather data
-router.post('/', (req: Request, res: Response) => {
-  // TODO: GET weather data from city name
-  // TODO: save city to search history
+  try {
+    const weatherData = await fetchWeather(city);
+    const savedCity = saveCity(weatherData.city, weatherData.lat, weatherData.lon);
+    res.json({ ...savedCity, weather: weatherData.weather });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch weather" });
+  }
 });
 
 // TODO: GET search history
-router.get('/history', async (req: Request, res: Response) => {});
+router.delete("/history/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
+  if (deleteCity(id)) {
+    res.json({ message: "City deleted successfully" });
+  } else {
+    res.status(404).json({ error: "City not found" });
+  }
+});
 
 // * BONUS TODO: DELETE city from search history
-router.delete('/history/:id', async (req: Request, res: Response) => {});
+router.delete("/history/:id", async (req: Request, res: Response) => {
+  const { id } = req.params;
+  if (deleteCity(id)) {
+    res.json({ message: "City deleted successfully" });
+  } else {
+    res.status(404).json({ error: "City not found" });
+  }
+});
 
 export default router;
