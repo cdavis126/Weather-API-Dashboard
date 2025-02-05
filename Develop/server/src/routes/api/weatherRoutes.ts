@@ -1,7 +1,7 @@
 import { Router, type Request, type Response } from "express";
 import dotenv from "dotenv";
 import WeatherService from "../../service/weatherService.js";
-import HistoryService from "../../service/historyService";
+import HistoryService from "../../service/historyService.js";
 
 dotenv.config();
 const router = Router();
