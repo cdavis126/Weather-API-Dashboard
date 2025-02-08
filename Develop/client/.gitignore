@@ -23,6 +23,6 @@ node_modules
 *.sw?
 
 # Do not ignore dist, as it's required for deployment
-!client/dist
+
 
 
