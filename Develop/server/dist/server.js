@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 import routes from './routes/index.js';
 const app = express();
 const PORT = process.env.PORT || 3001;
+console.log('App is running on port: ' + PORT);
 // TODO: Serve static files of entire client dist folder
 app.use(express.static(path.join(__dirname, "../../client/dist")));
 // TODO: Implement middleware for parsing JSON and urlencoded form data
