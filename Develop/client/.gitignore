@@ -7,9 +7,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Ignore node_modules
+node_modules
 *.local
-dist/
-node_modules/
 
 # Editor directories and files
 .vscode/*
@@ -21,5 +21,8 @@ node_modules/
 *.njsproj
 *.sln
 *.sw?
+
+# Do not ignore dist, as it's required for deployment
+!client/dist
 
 
