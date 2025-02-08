@@ -2,8 +2,6 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     /* Modules */
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
     "rootDir": "src" /* Specify the root folder within your source files. */,
 
     /* Emit */

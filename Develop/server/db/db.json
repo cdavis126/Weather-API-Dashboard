@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "d4eb1b58-190f-4022-ba25-35fb4848017d",
+    "name": "Dallas"
+  },
+  {
+    "id": "7cb6949f-2d71-47ed-b5d5-ccc808e26f0b",
+    "name": "Chicago"
+  },
+  {
+    "id": "8f5b52fd-8e22-4e49-b502-97580dcd483e",
+    "name": "Lexington"
+  },
+  {
+    "id": "2d8f6e1c-4e9a-4764-b725-79ced79f90cf",
+    "name": "Lexington"
+  }
+]

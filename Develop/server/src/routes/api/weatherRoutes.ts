@@ -8,16 +8,16 @@ const router = Router();
 
 // POST Request: Fetch weather & save to history
 router.post("/", async (req: Request, res: Response) => {
-  const { city } = req.body;
+  const { cityName } = req.body;
   
-  if (!city) {
+  if (!cityName) {
     return res.status(400).json({ error: "City name required" }); // ✅ Ensure this returns
   }
 
   try {
-    const weatherData = await WeatherService.getWeatherForCity(city);
-    const savedCity = await HistoryService.addCity(weatherData.city);
-    return res.json({ ...savedCity, weather: weatherData }); // ✅ Ensure this returns
+    const weatherData = await WeatherService.getWeatherForCity(cityName);
+    await HistoryService.addCity(cityName);
+    return res.json( weatherData ); // ✅ Ensure this returns
   } catch (error) {
     return res.status(500).json({ error: "Failed to fetch weather" }); // ✅ Ensure this returns
   }
