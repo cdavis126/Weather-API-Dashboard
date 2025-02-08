@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "type": "module",
-"scripts": {
-  "build": "npx tsc",
-  "start": "npm run build && node dist/server.js --ignore client",
-  "dev": "npx nodemon src/server.ts",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npm run build && node dist/server.js --ignore client",
+    "dev": "npx nodemon src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "nodemonConfig": {
     "watch": [
       "src"
@@ -36,6 +36,6 @@
     "@types/node": "^20.17.17",
     "@types/uuid": "^9.0.8",
     "nodemon": "^3.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.7.3"
   }
 }
