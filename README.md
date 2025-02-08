@@ -1,168 +1,117 @@
-# 09 Servers and APIs: Weather Dashboard
+# 🌦️ Weather-API-Dashboard
 
-## Your Task
+## **Description**
 
-External APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in their context, frequently consuming this data via a server.
+The **Weather API Dashboard** is a full-stack web application that allows users to check **real-time weather conditions** and a **5-day forecast** for any city worldwide. Users can search for a location, view current weather conditions, and revisit past searches from their history.  
 
-Your challenge is to build a weather dashboard application that calls the OpenWeather API and renders data in the browser.
+This project integrates the **OpenWeather API** to fetch accurate weather data, stores user searches, and provides an attractive application for easy navigation and clean formatting for UX.
 
-The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Render.
-
-* Use the [5-day weather forecast API](https://openweathermap.org/forecast5) to retrieve weather data for cities.
-
-* The base URL should look like the following:
-
-  ```url
-  https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-  ```
-
-* After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
-
-* For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
-
-## User Story
-
-```md
-AS A traveler
-
-I WANT to see the weather outlook for multiple cities
-
-SO THAT I can plan a trip accordingly
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN a weather dashboard with form inputs
-
-WHEN I search for a city
-
-THEN I am presented with current and future conditions for that city, and that city is added to the search history
-
-WHEN I view current weather conditions for that city
-
-THEN I am presented with the city name, the date, an icon representation of weather conditions, a description of the weather for the icon's alt tag, the temperature, the humidity, and the wind speed
-
-WHEN I view future weather conditions for that city
-
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-
-WHEN I click on a city in the search history
-
-THEN I am again presented with current and future conditions for that city
-```
-
-## Mock-Up
-
-The following image shows the web application's appearance and functionality:
-
-![The weather app includes a search option, a list of cities, and a 5-day forecast and current weather conditions for Atlanta ](./Assets/09-servers-and-apis-homework-demo.png)
-
-## Getting Started
-
-On the back end, the application should include a `searchHistory.json` file that will be used to store and retrieve cities using the `fs` module.
-
-The following HTML route should be created:
-
-* `GET *` should return the `index.html` file.
-
-The following API routes should be created:
-
-* `GET /api/weather/history` should read the `searchHistory.json` file and return all saved cities as JSON.
-
-* `POST /api/weather` should receive a city name to save on the request body, add it to the `searchHistory.json` file, and then return associated weather data to the client. You'll need to find a way to give each city name a unique id when it's saved (look into npm packages that could do this for you).
-
-Refer to the [Full-Stack Blog on deploying to Render](https://coding-boot-camp.github.io/full-stack/render/render-deployment-guide) and the [Render documentation on setting environment variables](https://docs.render.com/configure-environment-variables).
+- **Motivation:** [Your motivation]
+- **Why build this project:** [Your reason for choosing this project]
+- **Problem solved:** [Describe what problem this project addresses]
+- **What I learned:** [Key takeaways from this project]
 
 ---
 
-## 💡 Hints
-
-* Using the 5-day weather forecast API, you'll notice that you'll need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
-
-* How could we make the OpenWeather API calls server-side, parse the data, and then send the parsed data client-side?
-
-## 🏆 Bonus
-
-This application offers the DELETE functionality on the front end. As a bonus, try to add the DELETE route to the application using the following guideline:
-
-* `DELETE /api/weather/history/:id` should receive a route parameter that contains the id of a city name to delete. To delete a city, you'll need to read all the cities from the `searchHistory.json` file, remove the city with the given `id` property, and then rewrite the cities to the `searchHistory.json` file.
+## **📌 Table of Contents**
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Tests](#tests)
+- [Questions](#questions)
+- [Features](#features)
 
 ---
 
-## Grading Requirements
+## **Installation**
 
-> **Note** If a Challenge assignment submission is marked as “0”, it's considered incomplete and won't count toward your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code.
->
-> * A repository that includes a unique name but nothing else.
->
-> * A repository that includes only a README file but nothing else.
->
-> * A repository that includes only starter code.
+To install and run this project locally, follow these steps:
 
-This Challenge is graded based on the following criteria:
+### 1️⃣ Clone the Repository & Install Dependencies  
+- Open your terminal and run:  
+  ```bash
+  git clone [YOUR_GITHUB_REPO_URL]
+  cd Weather-API-Dashboard
 
-### Technical Acceptance Criteria: 40%
+- Move into the server directory and install dependencies:
 
-The Challenge satisfies all of the above acceptance criteria, plus the following:
+cd develop/server
+npm install
 
-* Application uses the OpenWeather API to retrieve weather data.
+### 2️⃣ Set up enviroment & API key
+Create an account at https://home.openweathermap.org/ and create your own API key
+In VS code Create a .env file in the server/ folder and add your API information
 
-* Application back end must store cities that have a unique id in a JSON file.
+### 3️⃣ In terminal build the TypeScript files:
+Navigate to the server/ directory and run:
+npx tsc
 
-* Application must be deployed to Render.
+###  4️⃣ Start the development server
+npm start
 
-### Deployment: 32%
+### 5️⃣ Launch application and start seeing the weather ⛅
+Once server is started launch application using your Google Chrome browser and navigate to http://localhost:3001/
 
-The Challenge satisfies all of the above acceptance criteria, plus the following:
+## Usage  
 
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-The Challenge satisfies all of the above acceptance criteria, plus the following:
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-The Challenge satisfies all of the above acceptance criteria, plus the following:
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Bonus: +10 Points
-
-Fulfilling the following can add up to 10 points to your grade. Note that the highest grade you can achieve is still 100:
-
-* Application allows users to delete cities.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README file describing the project.
+### 1️⃣ Enter a City Name  
+- Type a city name in the search bar and submit the request.  
 
 ---
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+### 2️⃣ View Current Weather Conditions  
+- The dashboard will display:  
+  - **City name & date**  
+  - **Temperature (°F)**  
+  - **Humidity (%)**  
+  - **Wind speed (MPH)**  
+  - **Weather condition with an icon**  
+
+---
+
+### 3️⃣ Check the 5-Day Forecast  
+- View daily weather details, including:  
+  - **Temperature, humidity, and wind speed**  
+  - **Weather condition for each day**  
+
+---
+
+### 4️⃣ Access Search History  
+- Previous searches are saved for quick access.  
+
+---
+
+### 5️⃣ Reload Weather Data  
+- Click on any previously searched city to instantly view its latest weather conditions. 
+
+## Features  
+
+- 🌦️ **Real-time weather updates** using the OpenWeather API 
+- ☀️ **5-day forecast** for any location using search by city functionality 
+- 🌨 **Search history** is saved for quick access & delete functionality provided
+- 🌩 **User-friendly, responsive design with search history management.**  
+- ☔ **Developed with TypeScript, Node.js, Express, and Vite.**  
+
+## Contributing  
+
+This project was completed using a combination of **tutoring sessions, office hours, and TA guidance**.  
+Additionally, the following resources were utilized:  
+
+- 💡 **[r/learnprogramming](https://www.reddit.com/r/learnprogramming/)** – Was referenced for setting up API applications
+- 🤖 **GitHub Copilot** – AI-powered code suggestions for efficiency for debudding / fixes on code
+- 🧠 **XpertAI** – Assisted in debugging and formatting errors
+
+## License  
+
+This project is licensed under the **MIT License**. 
+
+## Tests  
+All functionality in this application was tested manually and debugging was completed through VS code and Google Developer Tools.
+
+## Questions  
+
+If you have any questions, feel free to reach out:  
+
+- **GitHub:** [CDavis126](https://github.com/cdavis126)  
+- **Email:** CherieDavis126@gmail.com
