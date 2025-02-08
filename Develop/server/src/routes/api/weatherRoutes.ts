@@ -1,35 +1,37 @@
-import { Router, type Request, type Response } from "express";
+import express, { Router, Request, Response } from "express"; // 
 import dotenv from "dotenv";
 import WeatherService from "../../service/weatherService.js";
 import HistoryService from "../../service/historyService.js";
 
 dotenv.config();
-const router = Router();
+const router: express.Router = Router(); // 
 
 // POST Request: Fetch weather & save to history
-router.post("/", async (req: Request, res: Response) => {
+router.post("/", async (req: Request, res: Response): Promise<void> => {
   const { cityName } = req.body;
-  
+
   if (!cityName) {
-    return res.status(400).json({ error: "City name required" }); // ✅ Ensure this returns
+    res.status(400).json({ error: "City name required" });
+    return;
   }
 
   try {
     const weatherData = await WeatherService.getWeatherForCity(cityName);
     await HistoryService.addCity(cityName);
-    return res.json( weatherData ); // ✅ Ensure this returns
+    res.json(weatherData);
   } catch (error) {
-    return res.status(500).json({ error: "Failed to fetch weather" }); // ✅ Ensure this returns
+    res.status(500).json({ error: "Failed to fetch weather" });
   }
 });
+
 // GET Request: Retrieve search history
-router.get("/history", async (_req: Request, res: Response) => {
+router.get("/history", async (_req: Request, res: Response): Promise<void> => {
   const history = await HistoryService.getCities();
   res.json(history);
 });
 
 // DELETE Request: Remove city from search history
-router.delete("/history/:id", async (req: Request, res: Response) => {
+router.delete("/history/:id", async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
   const deleted = await HistoryService.removeCity(id);
 
