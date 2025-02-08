@@ -1,16 +1,18 @@
 # 🌦️ Weather-API-Dashboard
 
+## 🌍 Live Demo 
+**Deployed Weather API Dashboard:** [Click here to view](https://your-app.onrender.com/)
+
 ## **Description**
 
 The **Weather API Dashboard** is a full-stack web application that allows users to check **real-time weather conditions** and a **5-day forecast** for any city worldwide. Users can search for a location, view current weather conditions, and revisit past searches from their history.  
 
 This project integrates the **OpenWeather API** to fetch accurate weather data, stores user searches, and provides an attractive application for easy navigation and clean formatting for UX.
 
-- **Motivation:** [Your motivation]
-- **Why build this project:** [Your reason for choosing this project]
-- **Problem solved:** [Describe what problem this project addresses]
-- **What I learned:** [Key takeaways from this project]
-
+- **Motivation:** This project was built to practice integrating third-party APIs into a full-stack web application
+- **Why build this project:** To create a functional weather dashboard where users can view current and forecasted weather data for various cities.
+- **Problem solved:** To create a functional weather dashboard where users can view current and forecasted weather data for various cities.
+- **What I learned:** API integration, handling environment variables securely, managing state in a front-end application, and implementing a backend with Express.js & TypeScript. Overall, the frustration with installation of dev dependencies are CRITICAL to the application functioning well!
 ---
 
 ## **📌 Table of Contents**
@@ -45,7 +47,7 @@ In VS code Create a .env file in the server/ folder and add your API information
 
 ### 3️⃣ In terminal build the TypeScript files:
 Navigate to the server/ directory and run:
-npx tsc
+npm run build
 
 ###  4️⃣ Start the development server
 npm start
