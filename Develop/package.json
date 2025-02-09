@@ -13,8 +13,7 @@
     "client:build": "cd client && npm run build",
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
-   "render-build": "cd client && npm install && npm install --save-dev typescript && npm run build && cd ../server && npm install && npm install --save-dev typescript && npx tsc"
-
+    "render-build": "cd client && npm install && npm run build && cd ../server && npm install && npx tsc"
   },
   "keywords": [],
   "author": "",
@@ -30,3 +29,4 @@
     "bootstrap": "^5.3.3"
   }
 }
+
