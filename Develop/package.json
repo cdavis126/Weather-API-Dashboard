@@ -2,7 +2,6 @@
   "name": "weather-dashboard",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run server",
@@ -13,11 +12,8 @@
     "client:build": "cd client && npm run build",
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
-   "render-build": "cd client && npm install && ./node_modules/.bin/tsc && npm run build && cd ../server && npm install && ./node_modules/.bin/tsc"
+    "render-build": "cd client && npm install && npx tsc && npm run build && cd ../server && npm install && npx tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0",
