@@ -12,7 +12,8 @@
     "client:build": "cd client && npm run build",
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
-   "render-build": "cd client && npm install && npm install -g typescript vite && npm run build && cd ../server && npm install && npm install -g typescript vite && npx tsc"
+   "render-build": "cd client && npm install && npx typescript --version && npm run build && cd ../server && npm install && npx typescript --version && npx tsc",
+    "deploy": "cd server && npm run deploy"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
