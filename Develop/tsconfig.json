@@ -19,13 +19,4 @@
     "noImplicitOverride": true,
     "useUnknownInCatchVariables": false
   },
-  "include": [
-    "server/src/**/*",
-    "client/src/**/*",
-    "server/index.ts",
-    "server.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
 }
