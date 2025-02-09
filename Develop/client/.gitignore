@@ -1,4 +1,7 @@
-# Logs
+# Ignore node_modules (do not track dependencies in git)
+node_modules/
+
+# Ignore logs
 logs
 *.log
 npm-debug.log*
@@ -6,10 +9,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-# Ignore node_modules
-node_modules
-*.local
 
 # Editor directories and files
 .vscode/*
@@ -22,7 +21,7 @@ node_modules
 *.sln
 *.sw?
 
-# Do not ignore dist, as it's required for deployment
-
+# Do not ignore dist directory (it's required for deployment)
+!client/dist
 
 
