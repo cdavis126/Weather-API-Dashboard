@@ -4,16 +4,12 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowJs": true,
-    "checkJs": false, 
+    "checkJs": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-
-    /* ✅ Ensure TypeScript Outputs Files to `build/` Instead of Overwriting `dist/` */
     "outDir": "./build",
     "rootDir": "./",
-
-    /* ✅ Ensure TypeScript Strict Checks Are Still Applied */
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
@@ -30,7 +26,6 @@
     "server.ts"
   ],
   "exclude": [
-    "node_modules",
-    "client/dist",
+    "node_modules"
   ]
 }
