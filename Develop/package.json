@@ -12,7 +12,7 @@
     "client:build": "cd client && npm run build",
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
-   "render-build": "cd client && npm install && npx typescript --version && npm run build && cd ../server && npm install && npx typescript --version && npx tsc",
+"render-build": "cd client && npm install && ./node_modules/.bin/tsc && npm run build && cd ../server && npm install && ./node_modules/.bin/tsc",
     "deploy": "cd server && npm run deploy"
   },
   "devDependencies": {
